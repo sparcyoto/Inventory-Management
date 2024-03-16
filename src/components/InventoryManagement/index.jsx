@@ -4,7 +4,7 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Switch from '@mui/material/Switch';
 // import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 import EditModal from '@/components/EditModal';
 import Table from '@/components/Table';
@@ -20,10 +20,10 @@ const InventoryManagement = () => {
     const [editModalDetails, setEditModalDetails] = useState({})
 
     // handler for model close
-    const handleEditModalClose = () => setShowEditModal(false);
+    const handleEditModalClose = useCallback(() => setShowEditModal(false), []);
 
     // logic for saving the edit modal and reflecting on Inventory
-    const handleModalProductSave = (productItem) => {
+    const handleModalProductSave = useCallback((productItem) => {
         const updatedTableState = tableState.map(rowDetails => {
             if (rowDetails.id === productItem.id) return productItem;
 
@@ -31,7 +31,7 @@ const InventoryManagement = () => {
         })
 
         setTableState(updatedTableState);
-    }
+    }, [tableState])
 
 
     // performing api call on page mount and handling api failure
@@ -46,16 +46,16 @@ const InventoryManagement = () => {
     }, [])
 
     // handle logic for edit modal
-    const handleEdit = (rowData) => {
+    const handleEdit = useCallback((rowData) => {
         const { id, disable } = rowData || {};
         if (disable || !isAdmin) return;
 
         setEditModalDetails(rowData);
         setShowEditModal(true);
-    }
+    }, [isAdmin])
 
     // handle logic for Disabling the productItem
-    const handleDisable = (rowData, shouldDisable) => {
+    const handleDisable = useCallback((rowData, shouldDisable) => {
         if (!isAdmin) return;
 
         const { id } = rowData || {};
@@ -66,17 +66,17 @@ const InventoryManagement = () => {
         });
 
         setTableState(newTableData);
-    }
+    }, [isAdmin, tableState]);
 
     // handle logic for Deleting the productItem
-    const handleDelete = (rowData) => {
+    const handleDelete = useCallback((rowData) => {
         if (!isAdmin) return;
 
         const { id } = rowData || {};
         const filteredData = tableState.filter(tableRowData => tableRowData.id !== id);
 
         setTableState(filteredData);
-    }
+    }, [isAdmin, tableState])
 
 
     // rendering admin, user switch

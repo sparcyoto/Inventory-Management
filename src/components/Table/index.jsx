@@ -14,14 +14,10 @@ import React from "react";
 import styles from './table.module.scss'
 
 
-
-export default function SimpleTable({ tableData = [], isAdmin, onEdit, onDisable, onDelete }) {
-
-
+const InventoryTable = React.memo(({ tableData = [], isAdmin, onEdit, onDisable, onDelete }) => {
+  // rendering action button and logic
   const renderActionButtons = (rowData) => {
     const { disable } = rowData || {};
-
-
 
     return <div>
       <CreateIcon onClick={() => { onEdit(rowData) }} className={disable || !isAdmin ? '' : styles.editIcon} />
@@ -62,4 +58,6 @@ export default function SimpleTable({ tableData = [], isAdmin, onEdit, onDisable
       </Table>
     </TableContainer>
   );
-}
+})
+
+export default InventoryTable;
