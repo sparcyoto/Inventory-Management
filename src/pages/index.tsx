@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import InventoryManagement from '@/components/InventoryManagement';
+import InventoryManagement from '@/components/InventoryManagement/index';
 
 import styles from './index.module.scss'
 

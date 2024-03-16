@@ -3,7 +3,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Switch from '@mui/material/Switch';
-import type { NextPage } from 'next';
+// import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
 import EditModal from '@/components/EditModal';
@@ -11,7 +11,7 @@ import Table from '@/components/Table';
 
 import styles from './inventoryManagement.module.scss'
 
-const InventoryManagement: NextPage = () => {
+const InventoryManagement = () => {
 
     const [tableState, setTableState] = useState([]);
     const [isAdmin, setIsAdmin] = useState(false);
