@@ -1,0 +1,34 @@
+.container{
+  background-color: white;
+  border-radius: 8px;
+}
+
+.headingSection{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottomButtonsContainer{
+  display: flex;
+  gap: 4px;
+  justify-content: end;
+}
+
+.editableSectionContainer{
+  display: grid;
+  gap: 4px;
+
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.editableSectionRowContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputContainer{
+  padding: 6px;
+  border-radius: 6px;;
+
+}

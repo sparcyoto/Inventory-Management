@@ -1,0 +1,30 @@
+.table {
+  minWidth: 650px;
+}
+
+.redTrash{
+
+  font-size: 48px;
+    color: red;
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    & ::after{
+        content: "\f014";
+    }
+}
+
+.editIcon{
+  color: green;
+}
+
+.disableIcon{
+  color: purple;
+}
+
+.deleteIcon{
+  color: red
+}

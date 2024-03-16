@@ -1,0 +1,32 @@
+.inventoryOverViewContainer{
+  display: flex;
+  width: 100vw;
+  gap: 10px;
+  padding: 10px;
+}
+
+.inventoryOverviewCard{
+  background-color: rgb(14, 86, 14);
+  color:white;
+  border-radius: 8px;
+
+  flex: 1;
+
+  padding: 20px;
+}
+.inventoryOverviewCardSection{
+  display: flex;
+
+  gap: 4px;
+}
+
+.container{
+  display: flex;
+}
+
+
+.viewSwitch{
+  display: flex;
+  justify-content: end;
+  padding: 4px;
+}
