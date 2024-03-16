@@ -34,7 +34,6 @@ export default function EditModal({ open, onClose, onSave, productItem }) {
     onClose()
   }
 
-  console.log('modal', productDetails, productItem)
 
   const renderEditableSection = () => {
     return <div className={styles.editableSectionContainer}>
